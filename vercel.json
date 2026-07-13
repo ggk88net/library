@@ -1,4 +1,13 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "outputDirectory": "artifacts/mockup-sandbox/dist"
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/index.ts"
+    },
+    {
+      "source": "/((?!api|assets|favicon|logo).*)",
+      "destination": "/index.html"
+    }
+  ]
 }
